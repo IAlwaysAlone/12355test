@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>sphera</title>
     <style>
         html, body {
@@ -40,13 +39,6 @@
             var material = new BABYLON.StandardMaterial("material", scene);
             material.diffuseColor = new BABYLON.Color3(1, 0, 0);
             sphere.material = material;
-            
-            scene.onPointerObservable.add((eventData) => {
-                if (eventData.type === BABYLON.PointerEventTypes.POINTERUP) {
-                    var pickResult = scene.pick(scene.pointerX, scene.pointerY);
-                    if (pickResult.hit) {
-                        sphere.position.x = pickResult.pickedPoint.x;
-                        sphere.position.y = pickResult.pickedPoint.y;
                     }
                 }
             });
